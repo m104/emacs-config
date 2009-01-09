@@ -27,7 +27,8 @@
       color-theme-is-global t
       save-place t
       imenu-auto-rescan t
-      truncate-partial-width-windows nil
+      default-truncate-lines t
+      truncate-partial-width-windows t
       uniquify-buffer-name-style 'forward
       ediff-window-setup-function 'ediff-setup-windows-plain
       save-place-file (convert-standard-filename "~/.emacs.d/places"))
