@@ -7,7 +7,15 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
-  (blink-cursor-mode -1))
+  (blink-cursor-mode -1)
+  (set-scroll-bar-mode 'right))
+
+(setq search-highlight t)        ; incremental search highlights
+(setq query-replace-highlight t) ; highlight during query
+
+;; Show line and column number
+(line-number-mode 1)
+(column-number-mode 1)
 
 ;; Sometimes backspace gets messed up in terminals; try to fix it.
 (when (not window-system) (keyboard-translate ?\C-h ?\C-?))
@@ -79,7 +87,6 @@
       rng-nxml-auto-validate-flag nil)
 
 ;; Associate modes with file extensions
-
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
@@ -92,7 +99,6 @@
 (add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode))
 
 ;; Cosmetics
-
 (eval-after-load 'diff-mode
   '(progn
      (set-face-foreground 'diff-added "green4")
@@ -102,6 +108,7 @@
   '(progn
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
+
 
 (provide 'user-misc)
 ;;; user-misc.el ends here
