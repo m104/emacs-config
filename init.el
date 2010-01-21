@@ -11,6 +11,12 @@
 (require 'ansi-color)
 (require 'recentf)
 
+;; ELPA loading and activation
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+
 ;; GUI preferences
 (when window-system
   (mouse-wheel-mode t)
@@ -90,4 +96,5 @@
       (concat dotfiles-dir "host/" system-name ".el"))
 (if (file-exists-p system-specific-config)
   (load system-specific-config))
+
 
