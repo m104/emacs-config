@@ -70,8 +70,8 @@
 ;;(defalias 'yes-or-no-p 'y-or-n-p)
 (random t) ;; Seed the random-number generator
 
-;; don't clutter up directories with files~
-(setq backup-directory-alist `(("." . ,(expand-file-name "~/.emacs.d/backups")))
+;; don't clutter up directories with backup files
+(setq backup-directory-alist (list (cons "."  "~/.emacs.d/backups"))
       auto-save-default nil)
 
 (load "nxhtml/autostart.el")
