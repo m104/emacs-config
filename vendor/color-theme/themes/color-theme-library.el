@@ -12027,7 +12027,7 @@ its default 80x25 state -- dark grey on black."
      (font-lock-preprocessor-face ((t (:foreground "#ffa8ff"))))
      (font-lock-string-face ((t (:foreground "#8dff8e"))))
      (font-lock-type-face ((t (:bold t :foreground "#60A4F1" :weight bold))))
-     (font-lock-variable-name-face ((t (:bold t :foreground "" :weight bold))))
+     (font-lock-variable-name-face ((t (:bold t :foreground "#E0E0E0" :weight bold))))
      (font-lock-warning-face ((t (:bold t :foreground "#ffff66" :background "#000215" :weight bold))))
      (header-line ((t (:box (:line-width -1 :style released-button) :background "grey20" :foreground "grey90" :box nil))))
      (highlight ((t (:background "#122BBB" :foreground "#06071D"))))
@@ -12047,6 +12047,11 @@ its default 80x25 state -- dark grey on black."
      (region ((t (:background "#122BBB" :foreground "#06071D"))))
      (scroll-bar ((t (:background "grey75"))))
      (secondary-selection ((t (:background "steel blue"))))
+     (mumamo-background-chunk-major ((t (:background "#06071D"))))
+     (mumamo-background-chunk-submode1 ((t (:background "#061B1D"))))
+     (mumamo-background-chunk-submode2 ((t (:background "#061D06"))))
+     (mumamo-background-chunk-submode3 ((t (:background "#1D1D06"))))
+     (mumamo-background-chunk-submode4 ((t (:background "#1D0606"))))
      (semantic-dirty-token-face ((t (:background "gray10"))))
      (semantic-unmatched-syntax-face ((t (:underline "red"))))
      (show-paren-match-face ((t (:background "light slate blue" :foreground "white"))))
@@ -13608,4 +13613,5 @@ Created by Dave Benjamin <ramen@ramenfest.com> Dec 23 2005."
     (underline ((t (:underline t))))
     (variable-pitch ((t (:family "helv")))))))
 
+;;;
 ;;; color-theme-library.el ends here
