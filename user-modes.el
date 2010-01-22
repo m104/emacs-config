@@ -7,6 +7,7 @@
       rng-nxml-auto-validate-flag nil)
 
 ;; associate modes with file extensions
+(add-to-list 'auto-mode-alist '("\\.mysql$" . sql-mode))
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 ;(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
@@ -15,7 +16,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
 (add-to-list 'auto-mode-alist '("\\.html$" . nxhtml-mode))
-(add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode)) 
+(add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode))
 
 
 ;; cosmetics
@@ -23,7 +24,7 @@
   '(progn
      (set-face-foreground 'diff-added "green4")
      (set-face-foreground 'diff-removed "red3")))
- 
+
 (eval-after-load 'magit
   '(progn
      (set-face-foreground 'magit-diff-add "green4")
