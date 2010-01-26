@@ -11996,7 +11996,11 @@ its default 80x25 state -- dark grey on black."
       (cursor-color . "#777777")
       (foreground-color . "#E0E0E0")
       (mouse-color . "#777777"))
-     (default ((t (:background "#06071D" :foreground "#E0E0E0" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
+     (default
+       ((t (:background "#06071D" :foreground "#E0E0E0"
+            :inverse-video nil :box nil :strike-through nil
+            :overline nil :underline nil
+            :slant normal :bold t :weight bold))))
      (bold ((t (:bold t :weight bold))))
      (bold-italic ((t (:bold t :weight bold))))
      (italic ((t (:foreground "#FFFFFF"))))
@@ -12009,14 +12013,14 @@ its default 80x25 state -- dark grey on black."
      (font-lock-constant-face ((t (:foreground "#62e9bd"))))
      (font-lock-doc-face ((t (:foreground "#AEAEAE"))))
      (font-lock-doc-string-face ((t (:foreground "#AEAEAE"))))
-     (font-lock-function-name-face ((t (:bold t :foreground "#b683ca" :weight bold))))
-     (font-lock-keyword-face ((t (:bold t :foreground "#2bf1dc" :weight bold))))
+     (font-lock-function-name-face ((t (:foreground "#b683ca"))))
+     (font-lock-keyword-face ((t (:foreground "#2bf1dc"))))
      (font-lock-preprocessor-face ((t (:foreground "#ffa8ff"))))
      (font-lock-reference-face ((t (:foreground "#2bf1dc"))))
      (font-lock-string-face ((t (:foreground "#8dff8e"))))
-     (font-lock-type-face ((t (:bold t :foreground "#a3ebff" :weight bold))))
-     (font-lock-variable-name-face ((t (:bold t :foreground "2bf1dc" :weight bold))))
-     (font-lock-warning-face ((t (:bold t :foreground "#ffff66" :background "#000215" :weight bold))))
+     (font-lock-type-face ((t (:foreground "#a3ebff"))))
+     (font-lock-variable-name-face ((t (:foreground "2bf1dc"))))
+     (font-lock-warning-face ((t (:foreground "#ffff66" :background "#000215"))))
      (excerpt ((t (:italic t :slant italic))))
      (header-line ((t (:box (:line-width -1 :style released-button) :background "grey20" :foreground "grey90" :box nil))))
      (highlight ((t (:background "#122BBB" :foreground "#06071D"))))

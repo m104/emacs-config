@@ -1,10 +1,12 @@
 
 
+
 ;; nxhtml stuff
-(setq mumamo-chunk-coloring 'submode-colored
-      nxhtml-skip-welcome t
-      indent-region-mode t
-      rng-nxml-auto-validate-flag nil)
+;(load "nxhtml/autostart.el")
+;(setq mumamo-chunk-coloring 'submode-colored
+;      nxhtml-skip-welcome t
+;      indent-region-mode t
+;      rng-nxml-auto-validate-flag nil)
 
 ;; associate modes with file extensions
 (add-to-list 'auto-mode-alist '("\\.mysql$" . sql-mode))
@@ -14,9 +16,9 @@
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\(on\\)?$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
-(add-to-list 'auto-mode-alist '("\\.html$" . nxhtml-mode))
-(add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode))
+;(add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
+;(add-to-list 'auto-mode-alist '("\\.html$" . nxhtml-mode))
+;(add-to-list 'auto-mode-alist '("\\.rhtml$" . nxhtml-mode))
 
 
 ;; cosmetics

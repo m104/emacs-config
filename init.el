@@ -80,8 +80,6 @@
 (setq backup-directory-alist (list (cons "."  "~/.emacs.d/backups"))
       auto-save-default nil)
 
-(load "nxhtml/autostart.el")
-
 ;; bindings
 (require 'user-bindings)
 (require 'user-modes)
