@@ -1,21 +1,52 @@
+(prefer-coding-system 'utf-8)
+
 ;; Load path
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 
-;; commonly used
-(require 'cl)
-(require 'saveplace)
-(require 'ffap)
-(require 'uniquify)
-(require 'ansi-color)
-(require 'recentf)
+;; Seed the random-number generator
+(random t)
 
-;; ELPA loading and activation
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+;; common stuff
+(require 'cl)
+;(require 'ffap)
+;(require 'ansi-color)
+
+;; TODO? ELPA/MELPA
+
+;; backup files stored within .emacs.d/
+(setq backup-directory-alist (list (cons "."  "~/.emacs.d/backups"))
+      auto-save-default nil)
+
+;; easy answers
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; basic preference properties
+(setq inhibit-startup-message t
+      search-highlight t
+      query-replace-highlight t
+      default-truncate-lines t
+      truncate-partial-width-windows t
+      font-lock-maximum-decoration t
+      visible-bell t
+      transient-mark-mode t
+      color-theme-is-global t
+      imenu-auto-rescan t
+      ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; editing preferences
+(global-font-lock-mode t)
+(show-paren-mode 1)
+(line-number-mode 1)
+(column-number-mode 1)
+(auto-compression-mode t)
+
+;; whitespace handling (defaults)
+(set-default 'indent-tabs-mode nil)
+(set-default 'indicate-empty-lines t)
+(set-default 'c-basic-offset 4) ; C/PHP
+(set-default 'tab-width 2)
 
 ;; GUI preferences
 (when window-system
@@ -26,73 +57,34 @@
   (blink-cursor-mode -1)
   (set-scroll-bar-mode 'right))
 
-;; search highlight
-(setq search-highlight t) ; incremental search highlights
-(setq query-replace-highlight t) ; highlight during query
+;; TODO (toggle) menu bar
+;(menu-bar-mode -1)
 
-;; line and column numbering
-(line-number-mode 1)
-(column-number-mode 1)
-
-;; random preferences
-(setq inhibit-startup-message t
-      font-lock-maximum-decoration t
-      visible-bell t
-      transient-mark-mode t
-      color-theme-is-global t
-      imenu-auto-rescan t
-      uniquify-buffer-name-style 'forward
-      ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;; not going to need a menu bar
-(menu-bar-mode -1)
+;; TODO ? unique buffer names
+;;(require 'uniquify)
+;;(setq uniquify-buffer-name-style 'forward)
 
 ;; save per-file places
+(require 'saveplace)
 (setq save-place t
-      save-place-file (convert-standard-filename "~/.emacs.d/places"))
+      save-place-file (concat dotfiles-dir "places"))
 
-;; line truncation (no wrapping)
-(setq default-truncate-lines t
-      truncate-partial-width-windows t)
-
-;; transparently open compressed files
-(auto-compression-mode t)
- 
-;; enable syntax highlighting for older Emacsen that have it off
-(global-font-lock-mode t)
- 
 ;; save a list of recent files visited.
+(require 'recentf)
 (recentf-mode 1)
  
-;; highlight matching parentheses when the point is on them.
-(show-paren-mode 1)
+;; TODO ? initialize the color-theme library
+;(add-to-list 'load-path (concat dotfiles-dir "vendor/color-theme"))
+;(require 'color-theme)
+;(color-theme-initialize)
 
-;; indentation style (no tabs)
-(set-default 'indent-tabs-mode nil)
-(set-default 'indicate-empty-lines t)
-(set-default 'c-basic-offset 4) ; C/PHP
-(set-default 'tab-width 2)
- 
-;;(defalias 'yes-or-no-p 'y-or-n-p)
-(random t) ;; Seed the random-number generator
+;; TODO user's bindings
+;(require 'user-bindings)
+;(require 'user-modes)
 
-;; don't clutter up directories with backup files
-(setq backup-directory-alist (list (cons "."  "~/.emacs.d/backups"))
-      auto-save-default nil)
-
-;; bindings
-(require 'user-bindings)
-(require 'user-modes)
-
-;; initialize the color-theme library
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
-(require 'color-theme)
-(color-theme-initialize)
-
-;; per-host customizations
+;; per-OS customizations
 (setq system-specific-config
-      (concat dotfiles-dir "host/" system-name ".el"))
+      (concat dotfiles-dir "system/" (symbol-name system-type) ".el"))
 (if (file-exists-p system-specific-config)
   (load system-specific-config))
-
 

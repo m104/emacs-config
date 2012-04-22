@@ -4,6 +4,6 @@
 
 (prefer-coding-system 'utf-8)
 
-(when window-system
-  (color-theme-glow))
+;(when window-system
+;  (color-theme-glow))
 

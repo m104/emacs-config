@@ -1,13 +1,3 @@
-
-
-
-;; nxhtml stuff
-;(load "nxhtml/autostart.el")
-;(setq mumamo-chunk-coloring 'submode-colored
-;      nxhtml-skip-welcome t
-;      indent-region-mode t
-;      rng-nxml-auto-validate-flag nil)
-
 ;; associate modes with file extensions
 (add-to-list 'auto-mode-alist '("\\.mysql$" . sql-mode))
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
