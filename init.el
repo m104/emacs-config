@@ -16,8 +16,10 @@
 ;; TODO? ELPA/MELPA
 
 ;; backup files stored within .emacs.d/
-(setq backup-directory-alist (list (cons "."  "~/.emacs.d/backups"))
-      auto-save-default nil)
+(setq backup-directory-alist
+      `((".*" . ,(concat dotfiles-dir "backups/"))))
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat dotfiles-dir "backups/") t)))
 
 ;; easy answers
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -40,7 +42,9 @@
 (show-paren-mode 1)
 (line-number-mode 1)
 (column-number-mode 1)
+(delete-selection-mode t)
 (auto-compression-mode t)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;; whitespace handling (defaults)
 (set-default 'indent-tabs-mode nil)
@@ -78,9 +82,9 @@
 ;(require 'color-theme)
 ;(color-theme-initialize)
 
-;; TODO user's bindings
-;(require 'user-bindings)
-;(require 'user-modes)
+;; bindings and modes
+(require 'user-bindings)
+;(require 'user-modes) ; TODO
 
 ;; per-OS customizations
 (setq system-specific-config

@@ -1,5 +1,6 @@
 .DS_Store
 places
 loaddefs.el
+eshell/*
 *~
 *.swp
