@@ -84,7 +84,9 @@
 
 ;; per-OS customizations
 (setq system-specific-config
-      (concat dotfiles-dir "system/" (symbol-name system-type) ".el"))
+      (concat dotfiles-dir "system/"
+              (replace-regexp-in-string "\/" "-" (symbol-name system-type))
+              ".el"))
 (if (file-exists-p system-specific-config)
   (load system-specific-config))
 
