@@ -13,7 +13,8 @@
 ;(require 'ffap)
 ;(require 'ansi-color)
 
-;; TODO? ELPA/MELPA
+;; ELPA/MELPA
+(require 'user-packages)
 
 ;; backup files stored within .emacs.d/
 (setq backup-directory-alist
