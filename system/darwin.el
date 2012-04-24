@@ -1,4 +1,12 @@
-;; Bebop (OS X) specific settings
+;; Darwin (OS X) specific settings
+
+;; allow (and prefer) homebrew programs over native ones
+(push "/usr/local/bin" exec-path)
+
+;; command -> super
+;; option -> meta
+(setq mac-command-modifier 'super)
+(setq mac-option-modifier 'meta)
 
 (setq browse-url-browser-function 'browse-default-macosx-browser)
 
