@@ -2,5 +2,6 @@
 places
 loaddefs.el
 eshell/*
+elpa/*
 *~
 *.swp

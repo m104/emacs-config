@@ -40,9 +40,10 @@
 
 ;; editing preferences
 (global-font-lock-mode t)
-(show-paren-mode 1)
-(line-number-mode 1)
-(column-number-mode 1)
+(show-paren-mode t)
+(line-number-mode t)
+(column-number-mode t)
+(size-indication-mode t)
 (delete-selection-mode t)
 (auto-compression-mode t)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
@@ -59,11 +60,16 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
-  ;(blink-cursor-mode -1)
+  (blink-cursor-mode t)
   (set-scroll-bar-mode 'right))
 
+;; scrolling behavior
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
 ;; TODO (toggle) menu bar
-;(menu-bar-mode -1)
+;(menu-bar-mode nil)
 
 ;; TODO ? unique buffer names
 ;;(require 'uniquify)
