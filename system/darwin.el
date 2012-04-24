@@ -3,14 +3,15 @@
 ;; allow (and prefer) homebrew programs over native ones
 (push "/usr/local/bin" exec-path)
 
-;; command -> super
-;; option -> meta
-(setq mac-command-modifier 'super)
-(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super) ;; command -> super
+(setq mac-option-modifier 'meta) ;; option -> meta
 
 (setq browse-url-browser-function 'browse-default-macosx-browser)
 
 (when window-system
 ;  (color-theme-glow)
-  (set-face-font 'default "-apple-monaco-medium-r-normal--13-0-72-72-m-0-iso10646-1"))
+  (set-face-attribute 'default nil :font "Menlo-13")
+  (set-frame-height (selected-frame) 44)
+  (set-frame-width (selected-frame) 90))
+
 
