@@ -13,9 +13,6 @@
 ;(require 'ffap)
 ;(require 'ansi-color)
 
-;; ELPA/MELPA
-(require 'user-packages)
-
 ;; backup files stored within .emacs.d/
 (setq backup-directory-alist
       `((".*" . ,(concat dotfiles-dir "backups/"))))
@@ -89,6 +86,9 @@
 ;(require 'color-theme)
 ;(color-theme-initialize)
 
+;; ELPA/MELPA
+(require 'user-packages)
+
 ;; bindings and modes
 (require 'user-bindings)
 ;(require 'user-modes) ; TODO
@@ -100,4 +100,11 @@
               ".el"))
 (if (file-exists-p system-specific-config)
   (load system-specific-config))
+
+;; SLIME setup, using SBCL
+(when (setq inferior-lisp-program (locate-file "sbcl" exec-path))
+  (add-to-list 'load-path (concat dotfiles-dir "slime"))  ; your SLIME directory
+  (require 'slime)
+  (slime-setup)
+  (message "SLIME initialized using: %s" inferior-lisp-program))
 
