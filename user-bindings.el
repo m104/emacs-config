@@ -1,11 +1,3 @@
-;; real Emacs hackers don't use the arrow keys
-(global-unset-key [up])
-(global-unset-key [down])
-(global-unset-key [left])
-(global-unset-key [right])
-(global-unset-key [M-left])
-(global-unset-key [M-right])
-
 ;; readline-like word delete
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 
