@@ -3,5 +3,6 @@ places
 loaddefs.el
 eshell/*
 elpa/*
+backups/*
 *~
 *.swp
