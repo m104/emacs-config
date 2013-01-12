@@ -1,4 +1,4 @@
-;;; -*- Mode: lisp; indent-tabs-mode: nil; outline-regexp: ";;;;;*" -*-
+;;; -*- indent-tabs-mode: nil; outline-regexp: ";;;;;*" -*-
 ;;;
 ;;; slime-backend.lisp --- SLIME backend interface.
 ;;;
@@ -239,19 +239,21 @@ EXCEPT is a list of symbol names which should be ignored."
 
 (defmacro with-struct ((conc-name &rest names) obj &body body)
   "Like with-slots but works only for structs."
-  (flet ((reader (slot) (intern (concatenate 'string
-					     (symbol-name conc-name)
-					     (symbol-name slot))
-				(symbol-package conc-name))))
+  (check-type conc-name symbol)
+  (flet ((reader (slot)
+           (intern (concatenate 'string
+                                (symbol-name conc-name)
+                                (symbol-name slot))
+                   (symbol-package conc-name))))
     (let ((tmp (gensym "OO-")))
-    ` (let ((,tmp ,obj))
-        (symbol-macrolet
-            ,(loop for name in names collect 
-                   (typecase name
-                     (symbol `(,name (,(reader name) ,tmp)))
-                     (cons `(,(first name) (,(reader (second name)) ,tmp)))
-                     (t (error "Malformed syntax in WITH-STRUCT: ~A" name))))
-          ,@body)))))
+      ` (let ((,tmp ,obj))
+          (symbol-macrolet
+              ,(loop for name in names collect 
+                     (typecase name
+                       (symbol `(,name (,(reader name) ,tmp)))
+                       (cons `(,(first name) (,(reader (second name)) ,tmp)))
+                       (t (error "Malformed syntax in WITH-STRUCT: ~A" name))))
+            ,@body)))))
 
 (defmacro when-let ((var value) &body body)
   `(let ((,var ,value))
@@ -838,8 +840,9 @@ symbol. The recognised keys are:
   :TYPE :CLASS :ALIEN-TYPE :ALIEN-STRUCT :ALIEN-UNION :ALIEN-ENUM
 
 The value of each property is the corresponding documentation string,
-or :NOT-DOCUMENTED. It is legal to include keys not listed here (but
-slime-print-apropos in Emacs must know about them).
+or NIL (or the obsolete :NOT-DOCUMENTED). It is legal to include keys
+not listed here (but slime-print-apropos in Emacs must know about
+them).
 
 Properties should be included if and only if they are applicable to
 the symbol. For example, only (and all) fbound symbols should include
@@ -1344,6 +1347,7 @@ Don't execute unwind-protected sections, don't raise conditions.
 
 (definterface send (thread object)
   "Send OBJECT to thread THREAD."
+  (declare (ignore thread))
   object)
 
 (definterface receive (&optional timeout)
@@ -1363,6 +1367,7 @@ If THREAD is nil delete the association."
 (definterface find-registered (name)
   "Find the thread that was registered for the symbol NAME.
 Return nil if the no thread was registred or if the tread is dead."
+  (declare (ignore name))
   nil)
 
 (definterface set-default-initial-binding (var form)
@@ -1422,12 +1427,6 @@ but that thread may hold it more than once."
    (declare (ignore lock)
             (type function function))
    (funcall function))
-
-;; Same here: don't use this outside of swank-gray.lisp.
-(definterface call-with-io-timeout (function &key seconds)
-  "Calls function with the specified IO timeout."
-  (declare (ignore seconds))
-  (funcall function))
 
 
 ;;;; Weak datastructures
@@ -1502,3 +1501,8 @@ RESTART-FUNCTION, if non-nil, should be called when the image is loaded.")
   "Request saving a heap image to the file FILENAME.
 RESTART-FUNCTION, if non-nil, should be called when the image is loaded.
 COMPLETION-FUNCTION, if non-nil, should be called after saving the image.")
+
+(defun deinit-log-output ()
+  ;; Can't hang on to an fd-stream from a previous session.
+  (setf (symbol-value (find-symbol "*LOG-OUTPUT*" 'swank))
+        nil))
