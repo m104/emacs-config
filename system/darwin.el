@@ -10,8 +10,8 @@
 
 (when window-system
 ;  (color-theme-glow)
-  (set-face-attribute 'default nil :font "Menlo-13")
-  (set-frame-height (selected-frame) 44)
+  (set-face-attribute 'default nil :font "Menlo-12")
+  (set-frame-height (selected-frame) 50)
   (set-frame-width (selected-frame) 90))
 
 

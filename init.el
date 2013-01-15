@@ -35,6 +35,10 @@
       imenu-auto-rescan t
       ediff-window-setup-function 'ediff-setup-windows-plain)
 
+;; no bell of any kind
+;(defun really-no-bell ())
+;(setq ring-bell-function 'really-no-bell)
+
 ;; editing preferences
 (global-font-lock-mode t)
 (show-paren-mode t)
@@ -65,8 +69,8 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-;; TODO (toggle) menu bar
-;(menu-bar-mode nil)
+;; no menu bar
+(menu-bar-mode nil)
 
 ;; TODO ? unique buffer names
 ;;(require 'uniquify)
@@ -80,7 +84,7 @@
 ;; save a list of recent files visited.
 (require 'recentf)
 (recentf-mode 1)
- 
+
 ;; TODO ? initialize the color-theme library
 ;(add-to-list 'load-path (concat dotfiles-dir "vendor/color-theme"))
 ;(require 'color-theme)
@@ -88,10 +92,10 @@
 
 ;; ELPA/MELPA
 (require 'user-packages)
-
-;; bindings and modes
+;; extra bindings
 (require 'user-bindings)
-;(require 'user-modes) ; TODO
+;; extra modes
+(require 'user-modes)
 
 ;; per-OS customizations
 (setq system-specific-config
