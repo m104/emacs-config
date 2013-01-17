@@ -9,9 +9,9 @@
 (setq browse-url-browser-function 'browse-default-macosx-browser)
 
 (when window-system
-;  (color-theme-glow)
+  (load-theme 'mordekai t)
   (set-face-attribute 'default nil :font "Menlo-12")
   (set-frame-height (selected-frame) 50)
-  (set-frame-width (selected-frame) 90))
+  (set-frame-width (selected-frame) 120))
 
 

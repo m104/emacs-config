@@ -30,14 +30,11 @@
       truncate-partial-width-windows t
       font-lock-maximum-decoration t
       visible-bell t
+      ring-bell-function t  ; no bell of any kind
       transient-mark-mode t
       color-theme-is-global t
       imenu-auto-rescan t
       ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;; no bell of any kind
-;(defun really-no-bell ())
-;(setq ring-bell-function 'really-no-bell)
 
 ;; editing preferences
 (global-font-lock-mode t)
@@ -85,17 +82,16 @@
 (require 'recentf)
 (recentf-mode 1)
 
-;; TODO ? initialize the color-theme library
-;(add-to-list 'load-path (concat dotfiles-dir "vendor/color-theme"))
-;(require 'color-theme)
-;(color-theme-initialize)
-
-;; ELPA/MELPA
+;; ELPA/MELPA/Marmalade
 (require 'user-packages)
 ;; extra bindings
 (require 'user-bindings)
 ;; extra modes
 (require 'user-modes)
+
+;; user's theme(s)
+(add-to-list 'custom-theme-load-path
+             (concat dotfiles-dir "themes/"))
 
 ;; per-OS customizations
 (setq system-specific-config

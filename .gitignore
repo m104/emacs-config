@@ -4,5 +4,6 @@ loaddefs.el
 eshell/*
 elpa/*
 backups/*
+url/*
 *~
 *.swp
