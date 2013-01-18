@@ -43,7 +43,7 @@
    'mordekai
    ;; Frame
    `(default ((t (:foreground ,mordekai-gray+3 :background ,mordekai-base))))
-   `(fringe ((t (:forground ,mordekai-white :background ,mordekai-gray-2))))
+   `(fringe ((t (:forground ,mordekai-blue :background ,mordekai-gray-2))))
    `(minibuffer-prompt ((t (:foreground ,mordekai-gray+3))))
    `(cursor ((t (:foreground ,mordekai-black :background ,mordekai-gray+3))))
    `(modeline ((t (:foreground ,mordekai-gray+2 :background ,mordekai-gray-1))))
@@ -52,7 +52,7 @@
 
    ;; General Editing
    `(region ((t (:background ,mordekai-gray-1))))
-   `(highlight ((t (:foreground ,mordekai-yellow+1 :bold t))))
+   `(highlight ((t (:foreground ,mordekai-yellow+1 :background ,mordekai-base :bold t))))
    `(match ((t (:background ,mordekai-blue))))
    `(hl-line ((t (:background ,mordekai-gray-2))))
    `(isearch ((t (:foreground ,mordekai-white :background ,mordekai-blue))))
@@ -76,6 +76,8 @@
    `(font-lock-variable-name-face ((t (:foreground ,mordekai-purple-light))))
    `(font-lock-warning-face ((t (:foreground ,mordekai-red))))
 
+   ;; Extended faces
+   `(watchword-face ((t (:foreground ,mordekai-yellow+1 :bold t))))
 ))
 
 ;;;###autoload
