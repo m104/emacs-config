@@ -1,4 +1,3 @@
-/ChangeLog/1.563/Sat Jan 12 22:18:31 2013//
 /README/1.3/Thu Jan 10 05:32:07 2013//
 /bridge.el/1.2/Thu Jan 10 05:32:07 2013//
 /inferior-slime.el/1.11/Thu Jan 10 05:32:07 2013//
@@ -38,7 +37,6 @@
 /slime-typeout-frame.el/1.11/Thu Jan 10 05:32:07 2013//
 /slime-xref-browser.el/1.6/Thu Jan 10 05:32:07 2013//
 /swank-arglists.lisp/1.75/Sat Jan 12 22:18:31 2013//
-/swank-asdf.lisp/1.35/Sat Jan 12 22:18:31 2013//
 /swank-c-p-c.lisp/1.8/Thu Jan 10 05:32:07 2013//
 /swank-clipboard.lisp/1.3/Thu Jan 10 05:32:07 2013//
 /swank-fancy-inspector.lisp/1.34/Sat Jan 12 22:18:31 2013//
@@ -65,4 +63,6 @@
 /swank-sprof.lisp/1.6/Thu Jan 10 05:32:07 2013//
 /swank-util.lisp/1.2/Thu Jan 10 05:32:07 2013//
 /swank.rb/1.2/Thu Jan 10 05:32:07 2013//
+/ChangeLog/1.565/Fri Feb  1 03:10:46 2013//
+/swank-asdf.lisp/1.37/Fri Feb  1 03:10:47 2013//
 D
