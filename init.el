@@ -109,4 +109,6 @@
   (setq slime-kill-without-query-p t)
   (setq slime-net-coding-system (quote utf-8-unix))
   (message "SLIME initialized using: %s" inferior-lisp-program))
+  ; quicklisp SLIME helper
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
