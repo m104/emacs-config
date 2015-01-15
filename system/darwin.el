@@ -1,17 +1,20 @@
+(message "** Loading darwin.el...")
+
 ;; Darwin (OS X) specific settings
 
 ;; allow (and prefer) homebrew programs over native ones
-(push "/usr/local/bin" exec-path)
+(if (file-exists-p "/usr/local/bin")
+  (push "/usr/local/bin" exec-path))
 
-(setq mac-command-modifier 'super) ;; command -> super
-(setq mac-option-modifier 'meta) ;; option -> meta
+;; command -> super
+(setq mac-command-modifier 'super)
+;; option -> meta
+(setq mac-option-modifier 'meta)
 
 (setq browse-url-browser-function 'browse-default-macosx-browser)
 
 (when window-system
-  (load-theme 'mordekai t)
   (set-face-attribute 'default nil :font "Menlo-12")
   (set-frame-height (selected-frame) 50)
   (set-frame-width (selected-frame) 120))
-
 

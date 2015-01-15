@@ -1,9 +1,2 @@
-.DS_Store
-places
-loaddefs.el
-eshell/*
-elpa/*
-backups/*
-url/*
-*~
-*.swp
+elpa/
+states/

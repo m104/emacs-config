@@ -1,112 +1,31 @@
-(prefer-coding-system 'utf-8)
+;; version requirements
+(when (version< emacs-version "24.1")
+  (error "init.el requires at least GNU Emacs 24.1 (currently on %s)" emacs-version))
 
-;; Load path
-(setq dotfiles-dir (file-name-directory
+(message "** Loading init.el...")
+
+;; current (dotfile) path
+(setq user-dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
-(add-to-list 'load-path dotfiles-dir)
 
-;; Seed the random-number generator
-(random t)
+;; load paths
+(add-to-list 'load-path (expand-file-name "core/" user-dotfiles-dir))
+(add-to-list 'load-path (expand-file-name "modules/" user-dotfiles-dir))
 
-;; common stuff
-(require 'cl)
-;(require 'ffap)
-;(require 'ansi-color)
-
-;; backup files stored within .emacs.d/
-(setq backup-directory-alist
-      `((".*" . ,(concat dotfiles-dir "backups/"))))
-(setq auto-save-file-name-transforms
-      `((".*" ,(concat dotfiles-dir "backups/") t)))
-
-;; easy answers
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; basic preference properties
-(setq inhibit-startup-message t
-      search-highlight t
-      query-replace-highlight t
-      default-truncate-lines t
-      truncate-partial-width-windows t
-      font-lock-maximum-decoration t
-      visible-bell t
-      ring-bell-function t  ; no bell of any kind
-      transient-mark-mode t
-      color-theme-is-global t
-      imenu-auto-rescan t
-      ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;; editing preferences
-(global-font-lock-mode t)
-(show-paren-mode t)
-(line-number-mode t)
-(column-number-mode t)
-(size-indication-mode t)
-(delete-selection-mode t)
-(auto-compression-mode t)
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
-
-;; whitespace handling (defaults)
-(set-default 'indent-tabs-mode nil)
-(set-default 'indicate-empty-lines t)
-(set-default 'c-basic-offset 4) ; C/PHP
-(set-default 'tab-width 2)
-
-;; GUI preferences
-(when window-system
-  (mouse-wheel-mode t)
-  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
-  (tooltip-mode -1)
-  (tool-bar-mode -1)
-  (blink-cursor-mode t)
-  (set-scroll-bar-mode 'right))
-
-;; scrolling behavior
-(setq scroll-margin 0
-      scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
-
-;; no menu bar
-(menu-bar-mode nil)
-
-;; TODO ? unique buffer names
-;;(require 'uniquify)
-;;(setq uniquify-buffer-name-style 'forward)
-
-;; save per-file places
-(require 'saveplace)
-(setq save-place t
-      save-place-file (concat dotfiles-dir "places"))
-
-;; save a list of recent files visited.
-(require 'recentf)
-(recentf-mode 1)
-
-;; ELPA/MELPA/Marmalade
+;; load the core files
+(require 'user-common)
 (require 'user-packages)
-;; extra bindings
-(require 'user-bindings)
-;; extra modes
+(require 'user-ui)
+(require 'user-theme)
+(require 'user-editor)
 (require 'user-modes)
+(require 'user-bindings)
 
-;; user's theme(s)
-(add-to-list 'custom-theme-load-path
-             (concat dotfiles-dir "themes/"))
+;; load the modules
+(require 'user-calendar)
+(require 'user-lisp)
 
-;; per-OS customizations
-(setq system-specific-config
-      (concat dotfiles-dir "system/"
-              (replace-regexp-in-string "\/" "-" (symbol-name system-type))
-              ".el"))
-(if (file-exists-p system-specific-config)
-  (load system-specific-config))
+;; load the system-specific config file
+(require 'user-system)
 
-;; SLIME setup, using SBCL
-(when (setq inferior-lisp-program (locate-file "sbcl" exec-path))
-  (add-to-list 'load-path (concat dotfiles-dir "slime"))  ; your SLIME directory
-  (require 'slime)
-  (slime-setup)
-  (setq slime-kill-without-query-p t)
-  (setq slime-net-coding-system (quote utf-8-unix))
-  (message "SLIME initialized using: %s" inferior-lisp-program))
-
+(message "** Finished init.el")
