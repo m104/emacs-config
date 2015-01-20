@@ -32,7 +32,4 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-;; no menu bar
-(menu-bar-mode -1)
-
 (provide 'user-ui)
