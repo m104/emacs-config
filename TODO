@@ -1,7 +1,8 @@
 + ispell support
 + package refresh detection
-- autosave handling
-- ido.last handling
++ autosave handling
++ ido.last handling
+- help setup
 - default packages
 - lisp support
 - ruby support

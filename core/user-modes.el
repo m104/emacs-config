@@ -3,6 +3,7 @@
 ;; ido mode
 (ido-mode t)
 (setq ido-endable-flex-matching t)
+(setq ido-save-directory-list-file (expand-file-name "ido-last" user-states-dir))
 
 ;; flyspell-mode for on-the-fly spelling checks
 (require 'flyspell)

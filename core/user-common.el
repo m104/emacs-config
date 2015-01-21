@@ -44,6 +44,7 @@
       `((".*" . ,user-backups-dir)))
 (setq auto-save-file-name-transforms
       `((".*" ,user-backups-dir t)))
+(setq auto-save-list-file-prefix (expand-file-name "saves-" user-backups-dir))
 
 ;; save per-file places
 (require 'saveplace)

@@ -11,6 +11,7 @@
 ; the core package list
 (setq user-core-packages '(
     guru-mode
+    helm
     magit
     ))
 
