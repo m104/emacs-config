@@ -25,6 +25,7 @@
 ;(require 'user-ido)
 (require 'user-helm)
 (require 'user-calendar)
+(require 'user-org)
 (require 'user-lisp)
 
 ;; load the system-specific config file
