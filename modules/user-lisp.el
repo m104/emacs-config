@@ -1,4 +1,4 @@
-(message "Loading user-lisp.el...")
+(message "** Loading user-lisp.el...")
 
 (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
 ;(define-key lisp-mode-shared-map (kbd "C-c l") "lambda")

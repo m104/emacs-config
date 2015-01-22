@@ -1,4 +1,4 @@
-(message "Loading user-helm.el...")
+(message "** Loading user-helm.el...")
 
 ;; package requirements
 (user-ensure-package 'helm)

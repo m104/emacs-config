@@ -1,4 +1,4 @@
-(message "Loading user-calendar.el...")
+(message "** Loading user-calendar.el...")
 
 ;; calender directory location
 (setq calendar-dir (expand-file-name ".calendar/" (getenv "HOME")))

@@ -1,4 +1,4 @@
-(message "Loading user-ido.el...")
+(message "** Loading user-ido.el...")
 
 ;; ido mode
 (ido-mode t)
