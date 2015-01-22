@@ -11,8 +11,10 @@
 ; the core package list
 (setq user-core-packages '(
     guru-mode
-    helm
+    rainbow-mode
+    rainbow-delimiters
     magit
+    projectile
     ))
 
 ;; package install location

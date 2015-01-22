@@ -2,9 +2,13 @@
 + package refresh detection
 + autosave handling
 + ido.last handling
-- help setup
-- default packages
++ helm setup
++ rainbow mode
++ default packages
 - lisp support
 - ruby support
 - clojure support
+- helm faces update
+  (https://github.com/emacs-helm/helm/blob/1eb07354f50ec26aa8be1290233696656b8dca32/helm.el#L589)
+
 

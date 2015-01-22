@@ -22,6 +22,8 @@
 (require 'user-bindings)
 
 ;; load the modules
+;(require 'user-ido)
+(require 'user-helm)
 (require 'user-calendar)
 (require 'user-lisp)
 

@@ -1,10 +1,10 @@
 (message "Loading user-lisp.el...")
 
 (define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
-;; (define-key lisp-mode-shared-map (kbd "C-c l") "lambda")
+;(define-key lisp-mode-shared-map (kbd "C-c l") "lambda")
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 (define-key lisp-mode-shared-map (kbd "C-\\") 'lisp-complete-symbol)
-;; (define-key lisp-mode-shared-map (kbd "C-c v") 'eval-buffer)
+(define-key lisp-mode-shared-map (kbd "C-c v") 'eval-buffer)
 
 ;; paredit!
 (user-ensure-package 'paredit)

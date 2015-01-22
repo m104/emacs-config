@@ -51,7 +51,7 @@
 (setq save-place t
       save-place-file (expand-file-name "places" user-states-dir))
 
-;; save a list of recent files visited.
+;; save a list of recent files visited
 (require 'recentf)
 (setq recentf-save-file (expand-file-name "recentf" user-states-dir))
 (recentf-mode 1)
