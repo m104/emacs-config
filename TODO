@@ -4,12 +4,15 @@
 + ido.last handling
 + helm setup
 + rainbow mode
-+ default packages
 + org support
-- lisp support
-- ruby support
++ elisp support
++ ruby support
 - clojure support
-- helm faces update (so ugly!)
-  (https://github.com/emacs-helm/helm/blob/1eb07354f50ec26aa8be1290233696656b8dca32/helm.el#L589)
-
+- extra packages
+  - delighted
+  - ocurr/hi-lock-mode
+- subatomic theme updates
+  - rainbow parens
+  - helm faces update (so ugly!)
+    (https://github.com/emacs-helm/helm/blob/1eb07354f50ec26aa8be1290233696656b8dca32/helm.el#L589)
 

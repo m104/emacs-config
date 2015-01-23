@@ -26,7 +26,8 @@
 (require 'user-helm)
 (require 'user-calendar)
 (require 'user-org)
-(require 'user-lisp)
+(require 'user-emacs-lisp)
+(require 'user-ruby)
 
 ;; load the system-specific config file
 (require 'user-system)

@@ -31,13 +31,13 @@
   (message "Package database updated."))
 
 ;; helper to require that the given package is installed
-(defun user-ensure-package (pkg)
-  (when (not (package-installed-p pkg))
-    (message "Installing package %s" (symbol-name pkg))
-    (package-install pkg)))
+(defun user-ensure-packages (packages)
+  (dolist (pkg packages)
+    (when (not (package-installed-p pkg))
+      (message "Installing package %s" (symbol-name pkg))
+      (package-install pkg))))
 
 ;; pre load packages
-(dolist (p user-core-packages)
-  (user-ensure-package p))
+(user-ensure-packages user-core-packages)
 
 (provide 'user-packages)

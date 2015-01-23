@@ -1,9 +1,7 @@
 (message "** Loading user-helm.el...")
 
 ;; package requirements
-(user-ensure-package 'helm)
-(user-ensure-package 'helm-projectile)
-(user-ensure-package 'helm-descbinds)
+(user-ensure-packages '(helm helm-descbinds helm-projectile))
 
 ;; helm
 (require 'helm)
@@ -19,7 +17,6 @@
 
 ;; recommended defaults
 (setq helm-split-window-in-side-p           t
-      helm-buffers-fuzzy-matching           t
       helm-move-to-line-cycle-in-source     t
       helm-scroll-amount                    8
       helm-ff-search-library-in-sexp        t
@@ -51,6 +48,9 @@
 
 ;; descbinds <prefix> C-h support
 (helm-descbinds-mode)
+
+;; helm window auto-resizing
+(helm-autoresize-mode 1)
 
 ;; turn on helm
 (helm-mode 1)
