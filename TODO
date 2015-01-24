@@ -7,6 +7,7 @@
 + org support
 + elisp support
 + ruby support
+- yaml support
 - clojure support
 - extra packages
   - delighted
