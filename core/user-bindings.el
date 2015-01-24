@@ -8,10 +8,7 @@
 ;; full-apropos shortcut
 (global-set-key (kbd "C-h A") 'apropos)
 
-;; hippie expand
-(global-set-key (kbd "M-/") 'hippie-expand)
-
-;; regex searches by default
+;; regex and string search
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)

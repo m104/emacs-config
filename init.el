@@ -22,7 +22,7 @@
 (require 'user-bindings)
 
 ;; load the modules
-;(require 'user-ido)
+(require 'user-hippie)
 (require 'user-helm)
 (require 'user-calendar)
 (require 'user-org)

@@ -3,7 +3,7 @@
 ;; whitespace handling (defaults)
 (set-default 'indent-tabs-mode nil)
 (set-default 'indicate-empty-lines t)
-(set-default 'c-basic-offset 4) ; C/PHP
+(set-default 'c-basic-offset 4)
 (set-default 'tab-width 2)
 
 ;; Newline at end of file

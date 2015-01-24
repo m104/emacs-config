@@ -11,7 +11,10 @@
 - clojure support
 - extra packages
   - delighted
+    http://www.emacswiki.org/emacs/DelightedModes
   - ocurr/hi-lock-mode
+  - smart-scan
+    https://github.com/mickeynp/smart-scan
 - subatomic theme updates
   - rainbow parens
   - helm faces update (so ugly!)
