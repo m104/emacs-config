@@ -2,9 +2,16 @@
 
 ;; Darwin (OS X) specific settings
 
-;; allow (and prefer) homebrew programs over native ones
-(if (file-exists-p "/usr/local/bin")
-  (push "/usr/local/bin" exec-path))
+;; add OS X login shell PATH entries to exec-path
+(let* ((shell-output (shell-command-to-string
+                       "TERM=vt100 $SHELL -l -i -c 'echo $PATH'"))
+       (path-string (cadr (reverse (split-string shell-output "\n"))))
+       (path-list (split-string path-string path-separator)))
+  (setenv "PATH" path-string)
+  (dolist (entry (reverse path-list))
+    (add-to-list 'exec-path entry)))
+
+(message "exec-path: %s" exec-path)
 
 ;; command -> super
 (setq mac-command-modifier 'super)
