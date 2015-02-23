@@ -3,7 +3,6 @@
 (message "** Loading user-emacs-lisp.el...")
 
 ;; emacs lisp keys
-(define-key emacs-lisp-mode-map (kbd "C-c v") 'eval-buffer)
 (define-key emacs-lisp-mode-map (kbd "C-c C-c") 'eval-defun)
 
 ;; emacs lisp mode hook

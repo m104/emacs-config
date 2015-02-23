@@ -27,6 +27,7 @@
 (require 'user-calendar)
 (require 'user-org)
 (require 'user-emacs-lisp)
+(require 'user-clojure)
 (require 'user-ruby)
 
 ;; load the system-specific config file

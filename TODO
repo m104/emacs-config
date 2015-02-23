@@ -8,7 +8,7 @@
 + elisp support
 + ruby support
 - yaml support
-- clojure support
++ clojure support
 - extra packages
   - delighted
     http://www.emacswiki.org/emacs/DelightedModes
