@@ -13,7 +13,6 @@
     guru-mode
     rainbow-mode
     rainbow-delimiters
-    magit
     projectile
     ))
 

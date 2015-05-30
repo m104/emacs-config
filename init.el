@@ -24,6 +24,7 @@
 ;; load the modules
 (require 'user-hippie)
 (require 'user-helm)
+(require 'user-magit)
 (require 'user-calendar)
 (require 'user-org)
 (require 'user-emacs-lisp)
