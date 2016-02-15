@@ -30,6 +30,7 @@
 (require 'user-emacs-lisp)
 (require 'user-clojure)
 (require 'user-ruby)
+(require 'user-swift)
 
 ;; load the system-specific config file
 (require 'user-system)
