@@ -21,7 +21,7 @@
 (setq browse-url-browser-function 'browse-default-macosx-browser)
 
 (when window-system
-  (set-face-attribute 'default nil :font "Menlo-12")
+  (set-face-attribute 'default nil :font "Menlo-11")
   (set-frame-height (selected-frame) 50)
   (set-frame-width (selected-frame) 120))
 
