@@ -10,8 +10,7 @@
       default-truncate-lines         t
       truncate-partial-width-windows t
       font-lock-maximum-decoration   t
-      visible-bell                   t
-      ring-bell-function             t ; no bell of any kind
+      ring-bell-function             'ignore ; no bell of any kind
       transient-mark-mode            t
       color-theme-is-global          t
       imenu-auto-rescan              t

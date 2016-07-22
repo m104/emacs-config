@@ -31,6 +31,7 @@
 (require 'user-clojure)
 (require 'user-ruby)
 (require 'user-swift)
+(require 'user-markdown)
 
 ;; load the system-specific config file
 (require 'user-system)
