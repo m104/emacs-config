@@ -29,6 +29,7 @@
 (require 'user-org)
 (require 'user-emacs-lisp)
 (require 'user-clojure)
+(require 'user-sbcl)
 (require 'user-ruby)
 (require 'user-swift)
 (require 'user-markdown)

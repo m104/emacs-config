@@ -6,9 +6,8 @@
 
 ;; clojure mode hook
 (defun user-clojure-mode-defaults ()
-  (run-hooks 'user-lisp-mode-hook)
-  (setq mode-name "clj"))
+  (user-lisp-mode-defaults))
 
-(setq clojure-mode-hook 'user-clojure-mode-defaults)
+(add-hook 'clojure-mode-hook 'user-clojure-mode-defaults)
 
 (provide 'user-clojure)

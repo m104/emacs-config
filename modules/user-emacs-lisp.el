@@ -7,9 +7,8 @@
 
 ;; emacs lisp mode hook
 (defun user-emacs-lisp-mode-defaults ()
-  (run-hooks 'user-lisp-mode-hook)
-  (setq mode-name "Elisp"))
+  (user-lisp-mode-defaults))
 
-(setq emacs-lisp-mode-hook 'user-emacs-lisp-mode-defaults)
+(add-hook 'emacs-lisp-mode-hook 'user-emacs-lisp-mode-defaults)
 
 (provide 'user-emacs-lisp)

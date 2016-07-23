@@ -9,12 +9,11 @@
 ;; paredit!
 (user-ensure-packages '(paredit))
 (require 'paredit)
-(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 
 ;; shared lisp mode hook
 (defun user-lisp-mode-defaults ()
   (paredit-mode +1))
 
-(setq user-lisp-mode-hook 'user-lisp-mode-defaults)
+(add-hook 'lisp-mode-hook 'user-lisp-mode-defaults)
 
 (provide 'user-lisp)
