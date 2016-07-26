@@ -31,4 +31,12 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
+;; line numbering
+(defun linum-format-func (line)
+  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+     (propertize (format (format "%%%dd " w) line) 'face 'linum)))
+(setq linum-format 'linum-format-func)
+
+(global-linum-mode t)
+
 (provide 'user-ui)
