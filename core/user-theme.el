@@ -6,12 +6,7 @@
 
 ;; window theming
 (when window-system
-  (user-ensure-packages '(subatomic-theme))
-  (setq subatomic-high-contrast 't)
-  (load-theme 'subatomic t))
-
-;(when window-system
-;  (user-ensure-packages '(zenburn-theme))
-;  (load-theme 'zenburn t))
+  (user-ensure-packages '(monokai-theme))
+  (load-theme 'monokai t))
 
 (provide 'user-theme)

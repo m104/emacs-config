@@ -11,13 +11,14 @@
 + swift support
 - yaml support
 - extra packages
+  - Dired or Neo Tree
   - delighted
     http://www.emacswiki.org/emacs/DelightedModes
   - ocurr/hi-lock-mode
   - smart-scan
     https://github.com/mickeynp/smart-scan
-- subatomic theme updates
-  - rainbow parens
-  - helm faces update (so ugly!)
-    (https://github.com/emacs-helm/helm/blob/1eb07354f50ec26aa8be1290233696656b8dca32/helm.el#L589)
+  - helm-cider
+    https://github.com/clojure-emacs/helm-cider
+- theme updates
 
+more ideas here: https://github.com/emacs-tw/awesome-emacs
